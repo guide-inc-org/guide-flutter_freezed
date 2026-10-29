@@ -264,10 +264,8 @@ class Parameter {
 
   @override
   String toString() {
+    // Dart 3.13 no longer allows `final` on parameters.
     var res = ' ${type ?? 'dynamic'} $name';
-    if (isFinal) {
-      res = 'final $res';
-    }
     if (isRequired) {
       res = 'required $res';
     }
